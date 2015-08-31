@@ -1,8 +1,8 @@
 from cStringIO import StringIO
 
-from sudoku.players.BruteForceSudokuPlayer import BruteForceSudokuPlayer
 from sudoku.formats.OpenSudokuFormat import OpenSudokuFormat
 from sudoku.loaders.ClassicalSudoku import ClassicalSudoku
+from sudoku.players.BruteForceSudokuPlayer import BruteForceSudokuPlayer
 
 __author__ = 'lucky'
 

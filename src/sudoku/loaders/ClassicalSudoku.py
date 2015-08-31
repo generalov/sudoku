@@ -16,8 +16,8 @@ class ClassicalSudoku(object):
         rules = self.get_rules()
         for game_description in game_collection.list():
             d = [int(x) for x in game_description]
-            cells = [SudokuCell(i, value) if value in SudokuCell.POSSIBLE_VALUES else SudokuCell(i) for i, value in
-                     enumerate(d)]
+            cells = [SudokuCell(i, value) if value in SudokuCell.POSSIBLE_VALUES else SudokuCell(i)
+                     for i, value in enumerate(d)]
             board = SudokuBoard(cells, rules)
             yield board
 

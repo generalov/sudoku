@@ -8,4 +8,4 @@ __author__ = 'lucky'
 def test_should_list_games(opensudoku):
     game_collection = OpenSudokuFormat(StringIO(opensudoku))
     games = game_collection.list()
-    assert len(list(games))== 2
+    assert len(list(games)) == 2

@@ -10,4 +10,9 @@ def test_should_be_runnable():
 def test_should_display_help_message(capfd):
     subprocess.call(['sudoku'])
     out, err = capfd.readouterr()
-    assert 'Help' in out
+    assert 'usage' in out
+
+def test_should_run_as_module(capfd):
+    subprocess.call(['python', '-m', 'sudoku'])
+    out, err = capfd.readouterr()
+    assert 'usage' in err

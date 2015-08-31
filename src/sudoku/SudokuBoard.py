@@ -5,8 +5,8 @@ import math
 class SudokuBoard(object):
     """Игральная доска в Sudoku.
 
-    :type cells: collections.Sized[SudokuCell]
-    :type cell_value_rules: collections.Sized[AbstractRule]
+    :type cells: collections.Sized[SudokuCell] список клеток.
+    :type cell_value_rules: collections.Sized[AbstractRule] список правил игры.
 
     """
 
@@ -31,7 +31,7 @@ class SudokuBoard(object):
         return self
 
     def clean(self, cell):
-        """Записывает значение в клетку.
+        """Очищает клетку.
 
         :param cell: SudokuCell
         :return: self
@@ -63,8 +63,7 @@ class SudokuBoard(object):
         :return: boolean
 
         """
-        remains = len(list(self.take_empty_cells(self.iter_cells())))
-        # print "Remains", remains
+        remains = sum(1 for _ in self.take_empty_cells(self.iter_cells()))
         return remains == 0
 
     def iter_cells(self):
@@ -170,8 +169,8 @@ class SudokuBoard(object):
 class SudokuCell(object):
     """Клетка на доске Sudoku.
 
-    :type index: int
-    :type value: int
+    :type index: int номер клетки по порядку, начиная с нуля (0).
+    :type value: int|EMPTY_VALUE значение в клетке
 
     """
 
